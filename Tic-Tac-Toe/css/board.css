@@ -1,0 +1,27 @@
+.row {
+	background: grey;
+	width: 250px;
+	height: 100px;
+}
+
+.square {
+	text-align: center;
+	font-size: 80px;
+	float: left;
+	height: 98px;
+	width: 81px;
+	border: 1px solid darkgray;
+	background: ghostwhite;
+}
+
+.board {
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+body {
+	width: 800px;
+	margin: 0 auto;
+	background: darkgrey;
+}
