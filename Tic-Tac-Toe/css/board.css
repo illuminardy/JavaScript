@@ -1,13 +1,29 @@
 .square {
-	text-align: center;
-	font-size: 80px;
-	height: 98px;
-	width: 81px;
+    text-align: center;
+    font-size: 80px;
+    height: 98px;
+    width: 81px;
+    border: 1px solid darkgray;
+    background: ghostwhite;
+}
+
+.square:hover {
+    background: lightgray;
 	border: 1px solid darkgray;
-	background: ghostwhite;
+}
+
+.gameTitle {
+    margin: 0 auto;
+	width: 188px;
+    font-size: 36px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 .container {
-	width: 400px;
-	margin: 0 auto;
+    width: 400px;
+    margin: 0 auto;
+}
+
+table {
+    margin: 10px auto;
 }
