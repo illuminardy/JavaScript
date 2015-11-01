@@ -1,8 +1,8 @@
 var TicTacToe = (function(){
-	// Declarations
-	var currentPlayer = "X",
-	currentColor = "blue",
-	board = [];
+    // Declarations
+    var currentPlayer = "X",
+    currentColor = "blue",
+    board = [];
 
     function initializeBoard(){
         board = [["", "", ""],["", "", ""],["", "", ""]];
