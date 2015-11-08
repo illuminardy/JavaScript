@@ -6,22 +6,26 @@ var TicTacToe = (function(){
 
     function initializeBoard(){
         board = [["", "", ""],["", "", ""],["", "", ""]];
-        var tds = document.body.querySelectorAll(".square");
-        for (var i = 0; i < tds.length; i++){
-            tds[i].onclick = playerClickedCellFunc;
-        }
+        //var tds = document.body.querySelectorAll(".square");
+        var table = document.body.querySelector("table");
+        table.onclick = playerClickedCellFunc;
+        //for (var i = 0; i < tds.length; i++){
+          //  tds[i].onclick = playerClickedCellFunc;
+      // }
     }
 
-    function playerClickedCellFunc(){
-        if (this.innerHTML === ""){
-            this.innerHTML = currentPlayer;
-            this.style.color = currentColor;
-            var row = this.parentNode.id;
-            var col = this.id;
+    function playerClickedCellFunc(event){
+    	var target = event.target;
+
+        if (target.innerHTML === ""){
+            target.innerHTML = currentPlayer;
+            target.style.color = currentColor;
+            var row = target.parentNode.id;
+            var col = target.id;
 
             board[row][col] = currentPlayer;
             if (playerWon()) {
-                alert("has won the game!!!");
+                alert(currentPlayer + " has won the game!!!");
                 return;
             }
             switchCurrentPlayer();
