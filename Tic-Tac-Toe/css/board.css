@@ -34,6 +34,11 @@
     height: 35px;
     margin: 0 auto;
     background: darkgreen;
+    transition: opacity 1s ease-out;
+    opacity: 0; 
+}
+.newGame.active {
+    opacity: 1;
 }
 
 table {

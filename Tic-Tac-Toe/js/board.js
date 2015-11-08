@@ -2,19 +2,20 @@ var TicTacToe = (function(){
     // Declarations
     var currentPlayer = "X",
     currentColor = "blue",
-    board = [];
+    board = [],
+    newGameDiv;
 
     function initializeBoard(){
         board = [["", "", ""],["", "", ""],["", "", ""]];
-        //var tds = document.body.querySelectorAll(".square");
+
         var table = document.body.querySelector("table");
-        table.onclick = playerClickedCellFunc;
-        //for (var i = 0; i < tds.length; i++){
-          //  tds[i].onclick = playerClickedCellFunc;
-      // }
+        table.onclick = playerClickedCell;
+
+        newGameDiv = document.body.querySelector(".newGame");
+        newGameDiv.onclick = clearBoard;
     }
 
-    function playerClickedCellFunc(event){
+    function playerClickedCell(event){
     	var target = event.target;
 
         if (target.innerHTML === ""){
@@ -25,7 +26,7 @@ var TicTacToe = (function(){
 
             board[row][col] = currentPlayer;
             if (playerWon()) {
-                alert(currentPlayer + " has won the game!!!");
+            	newGameDiv.className = newGameDiv.className + " active";
                 return;
             }
             switchCurrentPlayer();
@@ -60,6 +61,17 @@ var TicTacToe = (function(){
         if (board[1][1] == currentPlayer && board[0][2] == board[2][0] && board[0][2] == board[1][1]) return true;
 
         return false;
+    }
+
+    function clearBoard(){
+    	var tds = document.body.querySelectorAll("td");
+
+    	for (var i = 0; i < tds.length; i++){
+    		tds[i].innerHTML = "";
+    	}
+
+    	board = [["", "", ""],["", "", ""],["", "", ""]];
+    	newGameDiv.className = "newGame";    
     }
 
     return { play: initializeBoard };
