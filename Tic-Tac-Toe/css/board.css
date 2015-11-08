@@ -20,15 +20,31 @@
 }
 
 .container {
-    width: 400px;
+    width: 600px;
     margin: 0 auto;
 }
 
-.newGame {
+.info {
+    text-align: center;
     border-radius: 20px 20px 0px 0px;
-    width: 186px;
+    width: 257px;
     font-size: 25px;
-    padding-left: 73px;
+    padding-top: 6px;
+    color: white;
+    height: 35px;
+    margin: 0 auto;
+    background: cadetblue;
+    transition: background 0.7s ease-out;
+}
+.info.active {
+    opacity: 1;
+    background: darkgreen;
+}
+
+.playerWon {
+    width: 207px;
+    font-size: 20px;
+    padding-left: 52px;
     padding-top: 6px;
     color: white;
     height: 35px;
@@ -36,9 +52,6 @@
     background: darkgreen;
     transition: opacity 1s ease-out;
     opacity: 0; 
-}
-.newGame.active {
-    opacity: 1;
 }
 
 table {
